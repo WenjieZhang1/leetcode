@@ -1,0 +1,15 @@
+heap vs stack
+
+
+
+I am programming in C++ and I am always wondering what exactly is stack memory vs heap memory. All I know is when I call new, I would get memory from heap. If if create local variables, I would get memory from stack. After some research on internet, the most common answer is stack memory is temporary and heap memory is permanent.
+
+Is stack and heap memory model a concept of operating system or computer architecture? So some of it might not follow stack and heap memory model or all of them follow it?
+
+Stack and heap memory is the abstraction over the memory model of the virtual memory ( which might swap memory between disk and RAM). So both stack and heap memory physically might be RAM or the disk? Then what is the reason where heap allocation seems to be slower than the stack counterpart?
+
+Also, the main program would be run in the stack or a heap?
+
+Also, what would happen if a process run out of the stack memory or heap memory allocated?
+
+Thanks

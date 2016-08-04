@@ -1,0 +1,56 @@
+
+class FileCompare {
+  public boolean isDistanceZeroOrOne(IntFileIterator a, IntFileIterator b) {
+    boolean checkSame = true, checkChange = true, checkAddRemove = false;
+    boolean isSame = true, isChange = false, isAdd = false, isRemove = false;. 涓€浜�-涓夊垎-鍦帮紝鐙鍙戝竷
+    boolean isFirstLoop = true;   . From 1point 3acres bbs
+    int prevA, prevB, curA = 0, curB = 0;
+    while (a.hasNext() && b.hasNext()) {
+      prevA = curA;
+      prevB = curB;
+      curA = a.next();
+      curB = b.next();
+      
+      if (curA != curB) {. from: 1point3acres.com/bbs 
+        if (checkSame) {
+          isSame = false;
+          checkSame = false;
+        }. 1point 3acres 璁哄潧
+        if (checkChange) {
+          if (!isChange) {. visit 1point3acres.com for more.
+            isChange = true;.1point3acres缃�
+          }
+          else {
+            isChange = false;
+            checkChange = false;-google 1point3acres
+          }
+        }
+        if (!checkAddRemove) {
+          checkAddRemove = true;
+          isAdd = true;
+          isRemove = true;
+          continue;
+        }
+      }
+      
+      if (checkAddRemove) {
+        isAdd = isAdd && (curA == prevB);
+        isRemove = isRemove && (curB == prevA);
+      }
+      
+      if (!(isSame || isChange || isAdd || isRemove))
+        return false;
+    }
+    -google 1point3acres
+    if (a.hasNext()) {
+      a.next();
+      return ((isSame || isAdd) && !a.hasNext());. 1point3acres.com/bbs
+    }   
+    if (b.hasNext()) {. 1point3acres.com/bbs
+      b.next();
+      return ((isSame || isRemove) && !b.hasNext());
+    }
+    
+    return (isSame || isChange || isAdd || isRemove);. Waral 鍗氬鏈夋洿澶氭枃绔�,
+  }
+}
